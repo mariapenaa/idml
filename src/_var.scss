@@ -1,0 +1,133 @@
+$blue: #14334A;
+$lighterBlue:#3E5A6F;
+$lightBlue:#CCD7E0;
+
+.title {
+    color:$blue;
+    font-family:sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight:400;
+}
+
+.paragraph {
+    color:$blue;
+    font-family:sans-serif;
+    font-size: 1rem;
+    font-weight:400;
+}
+
+.white-text {
+    color:white;
+    font-family:sans-serif;
+    font-weight:200;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.round-blue-title {
+    color:white;
+    background-color: $blue;
+    padding:2rem 1rem;
+    border-radius: 40px;
+    font-family:sans-serif;
+    text-transform:uppercase;
+} 
+
+.round-lightblue-title {
+    color:$blue;
+    background-color: $lightBlue;
+    padding:2rem 1rem;
+    border-radius: 40px;
+    font-family:sans-serif;
+    text-transform:uppercase;
+    font-weight:600;
+} 
+
+.blue-upper {
+    font-size:0.8rem;
+    color:$blue;
+    text-transform: uppercase;
+    font-weight:600;
+    font-family:sans-serif
+}
+
+.white-title {
+    text-transform:uppercase;
+    color:white;
+    font-weight:600;
+    font-size:1rem;
+    font-family:sans-serif;
+}
+
+.white-subtitle {
+    color:white;
+    font-weight:400;
+    font: size 0.8em;
+    font-family:sans-serif;
+}
+
+.blue-subtitle2 {
+    color:$blue;
+    font-weight:200;
+    font-size: 0.8em;
+    font-family:sans-serif;
+    text-transform:uppercase;
+}
+
+.white-subtitle2 {
+    color:white;
+    font-weight:200;
+    font: size 0.8em;
+    font-family:sans-serif;
+    text-transform:uppercase;
+}
+
+.blue-text {
+    color:$blue;
+    font-weight:400;
+    font-size: 1rem;
+    font-family:sans-serif;
+}
+
+
+
+@media only screen and (min-width: 600px) {
+    .title {
+        color:$blue;
+        font-family:sans-serif;
+        font-size: 1.87rem;
+        text-transform: uppercase;
+        font-weight:400;
+    }
+    
+    .paragraph {
+        color:$blue;
+        font-family:sans-serif;
+        font-size: 1.87rem;
+        font-weight:400;
+    }
+
+    .white-text {
+        font-size: 1.56rem;
+    }
+
+    .white-title {
+        font-size:1.25rem;
+    }
+    
+    .white-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .blue-subtitle2 {
+        font-size: 0.9em;
+    }
+    .white-subtitle2 {
+        font-size: 0.9em;
+    }
+
+    .blue-text {
+        font-size:1.2rem;
+    }
+}

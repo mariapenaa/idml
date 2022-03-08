@@ -1,0 +1,109 @@
+
+$time: 0.3s;
+.cls-1{opacity:0.8;}.cls-2{fill:#adbcc7;}.cls-3{fill:#adbcc7;}.cls-4{fill:#adbcc7;}.cls-5{fill:#adbcc7;}.cls-6{fill:#adbcc7;}.cls-7{fill:#adbcc7;}.cls-8{fill:#adbcc7;}.cls-9{fill:#adbcc7;}.cls-10{fill:#adbcc7;}.cls-11{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:7px;}
+
+svg {
+    opacity:0.8;
+}
+.mask {
+  fill: none;
+  stroke: #fff;
+
+}
+
+/* Animation the stroke-dashoffset to a zero length */
+@keyframes strokeOffset {
+  0% {
+    stroke-dashoffset: 2000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Apply the animation to each mask */
+#m-dot {
+  animation: strokeOffset 3s linear forwards;
+  animation-delay:calc(12*$time);
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+
+#m-n-blue{
+  animation: strokeOffset 3s linear forwards;
+  animation-delay: calc(11*$time);
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+
+#m-u {
+  animation: strokeOffset 3s linear forwards;
+  animation-delay: calc(10*$time);
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+
+#m-l {
+  animation: strokeOffset 3s linear forwards;
+  animation-delay: calc(9*$time);
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+
+
+#m-b {
+  animation: strokeOffset 3s linear forwards;
+  animation-delay: calc(8*$time);
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+
+#m-k{
+  animation: strokeOffset 3s linear forwards;
+  animation-delay: calc(7*$time);
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+
+#m-n {
+  animation: strokeOffset 3s linear forwards;
+  animation-delay: calc(6*$time);
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+
+#m-i2 {
+  animation: strokeOffset 3s linear forwards;
+  animation-delay: calc(5*$time);
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+
+#m-i {
+  animation: strokeOffset 3s linear forwards;
+  animation-delay: calc(4*$time);
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+
+#m-h {
+  animation: strokeOffset 3s linear forwards;
+  animation-delay: calc(3*$time);
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+
+#m-t {
+  animation: strokeOffset 3s linear forwards;
+  animation-delay: calc(1*$time);
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+
+#m-t2 {
+  animation: strokeOffset 3s linear forwards;
+  animation-delay: calc(2*$time);
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+

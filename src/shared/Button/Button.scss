@@ -1,0 +1,33 @@
+@import 'var.scss';
+.buttonWhite {
+    text-transform: uppercase;
+    border-radius:30px;
+    background-color: #FFFFFF;
+    color:$blue;
+    font-weight: bold;
+    font-size:14px;
+    padding:0.8rem 1rem;
+    border:none;
+    box-shadow: 0px 10px 16px -7px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 10px 16px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 16px -7px rgba(0,0,0,0.75);
+    min-width:15%;
+    transition:all ease-in 200ms;
+    cursor:pointer;
+}
+
+.buttonBlue {
+    @extend .buttonWhite;
+    background-color: $blue;
+    color:white;
+}
+
+.buttonWhite:hover {
+    background-color: $blue;
+    color:white;
+}
+
+.buttonBlue:hover {
+    background-color: #FFFFFF;
+    color:$blue;
+}
