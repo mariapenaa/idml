@@ -1,6 +1,14 @@
 @import 'var.scss';
 
 footer {
+    .desktop {
+        display:none;
+    }
+    .mobile {
+        width:60% !important;
+        margin-top:2rem;
+        margin-bottom:2rem;
+    }
     margin-top:5rem;
     overflow: hidden;
     background-color: $blue;
@@ -132,6 +140,7 @@ footer {
         span {
             width:22%;
             display: flex;
+            justify-content: center;
             align-items: center;
         }
         svg {
@@ -161,7 +170,12 @@ footer {
 
 
 @media only screen and (min-width: $lg) {
-
+    .desktop {
+        display:block;
+    }
+    .mobile {
+        display:block;
+    }
     footer {
         display:flex;
         flex-direction:row;
@@ -237,6 +251,7 @@ footer {
             span {
                 display: flex;
                 align-items: center;
+             
             }
             svg {
                 margin:0 0.2rem;

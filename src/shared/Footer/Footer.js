@@ -9,6 +9,8 @@ import ig from 'resources/instagram Black-01.svg';
 import fb from 'resources/002-facebook-logo.svg'
 import link from 'resources/003-linkedin.svg'
 
+import clientGroup from 'resources/client-group.png'
+
 import client from 'resources/Clients/drive-download-20220222T122632Z-001/Buddz.svg'
 import client2 from 'resources/Clients/drive-download-20220222T122632Z-001/Ismod.svg'
 import client3 from 'resources/Clients/drive-download-20220222T122632Z-001/Nuso.svg'
@@ -81,9 +83,10 @@ const Footer = () => {
             </div>
             <div className="social">
                 <div className="company-icons">
-                    <img src={client} alt="client" />
-                    <img src={client2} alt="client" />
-                    <img src={client3} alt="client" />
+                    <img src={clientGroup} alt="clients" className="mobile" />
+                    <img src={client} alt="client" className="desktop"/>
+                    <img src={client2} alt="client" className="desktop" />
+                    <img src={client3} alt="client" className="desktop" />
                 </div>
                 <div className="network-icons">
                     <span>
