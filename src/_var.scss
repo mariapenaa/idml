@@ -2,9 +2,75 @@ $blue: #14334A;
 $lighterBlue:#3E5A6F;
 $lightBlue:#CCD7E0;
 
+//fonts:
+@font-face {
+    font-family: 'Raleway-italic';
+    src: url("resources/Fonts/Raleway-Italic-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url("resources/Fonts/Raleway-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SF-Pro-Bold';
+    src: url("resources/Fonts/SF-Pro-Display-Black.otf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SF-Pro';
+    src: url("resources/Fonts/SF-Pro-Display-Regular.otf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SF-Pro-Italic';
+    src: url("resources/Fonts/SF-Pro-Display-BlackItalic.otf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SF-Pro-Bold';
+    src: url("resources/Fonts/SF-Pro-Display-Bold.otf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SF-Pro-Bold-Italic';
+    src: url("resources/Fonts/SF-Pro-Display-BoldItalic.otf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SF-Pro-Heavy';
+    src: url("resources/Fonts/SF-Pro-Display-Heavy.otf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SF-Pro-Heavy-Italic';
+    src: url("resources/Fonts/SF-Pro-Display-HeavyItalic.otf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SF-Pro-Thin';
+    src: url("resources/Fonts/SF-Pro-Display-Thin.otf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SF-Pro-Light';
+    src: url("resources/Fonts/SF-Pro-Display-Light.otf") format("truetype");
+}
+
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+
+
+
 .title {
     color:$blue;
-    font-family:sans-serif;
+    font-family:'SF-Pro';
     font-size: 1rem;
     text-transform: uppercase;
     font-weight:400;
@@ -12,14 +78,14 @@ $lightBlue:#CCD7E0;
 
 .paragraph {
     color:$blue;
-    font-family:sans-serif;
+    font-family:'SF-Pro';
     font-size: 1rem;
     font-weight:400;
 }
 
 .white-text {
     color:white;
-    font-family:sans-serif;
+    font-family:'SF-Pro';
     font-weight:200;
     text-align: center;
     font-size: 1rem;
@@ -30,26 +96,42 @@ $lightBlue:#CCD7E0;
     background-color: $blue;
     padding:2rem 1rem;
     border-radius: 40px;
-    font-family:sans-serif;
+    font-family:'SF-Pro-Bold';
     text-transform:uppercase;
+    cursor:pointer;
+    transition:all 200ms ease-in !important;
 } 
+
+.round-blue-title:hover {
+    border:solid 1px $blue;
+    background-color: white;
+    color:$blue;
+}
 
 .round-lightblue-title {
     color:$blue;
     background-color: $lightBlue;
     padding:2rem 1rem;
     border-radius: 40px;
-    font-family:sans-serif;
+    font-family:'SF-Pro-Bold';
     text-transform:uppercase;
     font-weight:600;
+    transition:all 200ms ease-in !important;
+    cursor:pointer;
 } 
+
+.round-lightblue-title:hover {
+    background-color:$blue;
+    color:$lightBlue;
+}
+
 
 .blue-upper {
     font-size:0.8rem;
     color:$blue;
     text-transform: uppercase;
     font-weight:600;
-    font-family:sans-serif
+    font-family:'SF-Pro';
 }
 
 .white-title {
@@ -57,21 +139,21 @@ $lightBlue:#CCD7E0;
     color:white;
     font-weight:600;
     font-size:1rem;
-    font-family:sans-serif;
+    font-family:'SF-Pro';
 }
 
 .white-subtitle {
     color:white;
     font-weight:400;
     font: size 0.8em;
-    font-family:sans-serif;
+    font-family:'SF-Pro';
 }
 
 .blue-subtitle2 {
     color:$blue;
     font-weight:200;
     font-size: 0.8em;
-    font-family:sans-serif;
+    font-family:'SF-Pro-Thin';
     text-transform:uppercase;
 }
 
@@ -79,7 +161,7 @@ $lightBlue:#CCD7E0;
     color:white;
     font-weight:200;
     font: size 0.8em;
-    font-family:sans-serif;
+    font-family:'SF-Pro-Thin';
     text-transform:uppercase;
 }
 
@@ -87,15 +169,15 @@ $lightBlue:#CCD7E0;
     color:$blue;
     font-weight:400;
     font-size: 1rem;
-    font-family:sans-serif;
+    ffont-family:'SF-Pro';
 }
 
 
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width:$md) {
     .title {
         color:$blue;
-        font-family:sans-serif;
+        font-family:'SF-Pro';
         font-size: 1.87rem;
         text-transform: uppercase;
         font-weight:400;
@@ -103,7 +185,7 @@ $lightBlue:#CCD7E0;
     
     .paragraph {
         color:$blue;
-        font-family:sans-serif;
+        ffont-family:'SF-Pro';
         font-size: 1.87rem;
         font-weight:400;
     }

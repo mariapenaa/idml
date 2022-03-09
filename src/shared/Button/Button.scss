@@ -1,8 +1,10 @@
 @import 'var.scss';
 .buttonWhite {
+    z-index:1;
     text-transform: uppercase;
     border-radius:30px;
     background-color: #FFFFFF;
+    font-family:'SF-Pro';
     color:$blue;
     font-weight: bold;
     font-size:14px;
@@ -11,7 +13,7 @@
     box-shadow: 0px 10px 16px -7px rgba(0,0,0,0.75);
     -webkit-box-shadow: 0px 10px 16px -7px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 10px 16px -7px rgba(0,0,0,0.75);
-    min-width:15%;
+    min-width:13rem;
     transition:all ease-in 200ms;
     cursor:pointer;
 }

@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './Home.scss';
 import logo from 'resources/logoHome.svg'
 import Animation from 'shared/Animation/Animation';
@@ -12,6 +12,9 @@ import brand4 from 'resources/Clients/IDML- Brands logos-09.png'
 import brand5 from 'resources/Clients/IDML- Brands logos-10.png'
 import brand6 from 'resources/Clients/IDML- Brands logos-28.png'
 import brand7 from 'resources/Clients/IDML- Brands logos-29.png'
+
+import video from 'resources/home-video.mp4'
+import video2 from 'resources/home-video.ogv'
 
 import imgNews from 'resources/Images/lightbulb.jpeg'
 import imgNews2 from 'resources/Images/lightbulb2.png'
@@ -32,7 +35,18 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
+import TypeWriterEffect from 'react-typewriter-effect';
 
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -40,6 +54,37 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = () => {
     const classes = useStyles();
+    let [width, setWidth] = useState(window.innerWidth);
+    let [slides, setSlides] = useState(5)
+    useEffect(()=>{
+        setWidth(window.innerWidth)
+          if(window.innerWidth > 2000) {
+              setSlides(7)
+          }
+          if(window.innerWidth > 1000) {
+            setSlides(5)
+        }
+        if(window.innerWidth > 700) {
+            setSlides(3)
+        }
+        if(window.innerWidth > 400) {
+            setSlides(2)
+        }
+        if(window.innerWidth > 0) {
+            setSlides(1)
+        }
+
+    }, [])
+
+    AOS.init({
+
+        offset:200,
+        delay:50,
+        duration:1000,
+        easing:'ease',
+        mirror:false,
+        once:false
+    })
     const clients = [
         {
             src:brand1,
@@ -95,15 +140,20 @@ const Home = () => {
             </div>
 
             <div className="section1">
+                <video width="100%" height="100%" autoPlay loop muted controls={false} className="blue-video">
+                    <source src={video} type="video/mp4" />
+                    <source src={video2} type="video/ogv" />
+                    Your browser does not support the video tag.
+                </video>
                 <div className="blue-layer"></div>
                 <div className="content">
                     <img src={logo} alt="logo" className="home-logo" />
                     <Animation className="animation"/>
                 </div>
                 <Button text='book a consultation' color="white" />
-                <img src={arrow} alt="arrow" className="arrow" />
+                <a href="#section2"><img src={arrow} alt="arrow" className="arrow" /></a>
             </div>
-            <div className="section2">
+            <div className="section2" id="section2">
                 <svg  className="pattern" xmlns="http://www.w3.org/2000/svg" width="1022.759" height="1020.341" viewBox="0 0 1022.759 1020.341">
                 <g id="Group_3340" data-name="Group 3340" opacity="0.149">
                     <path id="Path_15" data-name="Path 15" d="M634.93,387.17Z" transform="translate(-320.623 133.119)" fill="#74756f"/>
@@ -113,63 +163,75 @@ const Home = () => {
                     <path id="Path_26" data-name="Path 26" d="M444.19,388.222l34.563,65.488,34.941,66.39,37.857,71.924,41.288,78.329,49.3,93.469L713.186,898.64l98.51,186.65,32.028,60.566h70.352l1.864-3.552,30.748-58.5L1239.3,526.826l32.526-61.906,8.126-15.491,24.4-46.589,9.552-18.17V251.89l-14.3,27.168-5.5,10.482-14.15,26.877-12.9,24.547-32.555,61.877-32.613,61.935-32.556,61.907L885.86,1065.374l-7.863,15-17.791-33.835L775.239,884.751,706.924,754.709l-46.908-89.016-39.864-75.911L584.278,521.44l-34.534-65.692-32.7-62.284-32.467-61.673Q463.233,358.7,444.19,388.222Z" transform="translate(-444.19 -125.516)" fill="#74756f"/>
                 </g>
                 </svg>
-                <h2 className="title">What we do</h2>
-                <p className="paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                <h2 data-aos="fade-up" className="title">What we do</h2>
+                <p data-aos="fade-up" className="paragraph">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             </div>
             <div className="section3">
-                <h2 className="title">Our process</h2>
+                <h2 className="title" data-aos="fade-up">Our process</h2>
                 <div>
-                    <p className="round-blue-title">Consultancy</p>
-                    <p className="round-blue-title">Execution</p>
-                    <p className="round-blue-title">Partnership</p>
+                    <p className="round-blue-title" data-aos="fade-up" data-aos-delay="0" >Consultancy</p>
+                    <p className="round-blue-title" data-aos="fade-up" data-aos-delay="300">Execution</p>
+                    <p className="round-blue-title" data-aos="fade-up" data-aos-delay="600">Partnership</p>
                 </div>
             </div>
-            <div className="section4">
+            <div className="section4" data-aos="fade-up">
                 <h2 className="title">About us</h2>
                 <p className="paragraph">IDML Group is a multidisciplinary business specialized in FMCG and Tobacco industries. A highly diversified group operating in many countries focusing on ACE (Advanced Consumer Experiences). From consultancy to investment and international distribution, IDML (Invent, Develop, Manufacture and Launch) assists small to big companies to enter new markets.</p>
                 <Button text='learn more' className="about-button" color="blue" />
             </div>
-            <div className="section5">
-                <p className="white-text">“Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.”</p>
+            <div className="section5" data-aos="fade-up">
+            <TypeWriterEffect
+            textStyle={{ fontFamily: 'sans-serif', color:'white', fontSize:'1.5rem' }}
+            startDelay={100}
+            cursorColor="white"
+            text="“Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.”"
+            typeSpeed={10}
+          />
             </div>
-            <div className="section6">
-                <div className="title-container">
-                    <div></div>
+            <div className="section6" data-aos="fade-up">
                     <h2 className="title">Our clients</h2>
-                    <p className="mb-0 blue-upper">View all</p>
-                </div>
-                <div className="client-slider">
-                    {clients.map((e,idx)=>(
-                        <div className="client-square" key={idx}>
-                            <div className="client-layer">
-                                <p className="white-title mb-2">TITLE HERE</p>
-                                <p className="white-subtitle">Industry info</p>
-                            </div>
-                            <img src={e.src} alt="client logo" />
-                        </div>
-                    ))}
-                </div>
-                <div className="client-buttons">
+                            <Swiper
+                            // install Swiper modules
+                            modules={[Navigation, Pagination, Scrollbar, A11y]}
+                
+                            slidesPerView={width > 1300 ? 5 : (width > 800 ? 4 : 2)}
+                            pagination={{ clickable: true }}
+                            onSwiper={(swiper) => console.log(swiper)}
+                            onSlideChange={() => console.log('slide change')}
+                            >
+                            {clients.map((e,idx)=>(
+                                <SwiperSlide>
+                                    <div className="client-square" key={idx}>
+                                        <div className="client-layer">
+                                            <p className="white-title mb-2">TITLE HERE</p>
+                                            <p className="white-subtitle">Industry info</p>
+                                        </div>
+                                        <img src={e.src} alt="client logo" />
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                            </Swiper>
+{/*                 <div className="client-buttons">
                     <span className="circle-blue"></span>
                     <span className="circle-blue"></span>
                     <span className="oval-blue"></span>
                     <span className="circle-blue"></span>
                     <span className="circle-blue"></span>
-                </div>
+                </div> */}
             </div>
             <div className="section7 section3">
-                <h2 className="title">Industries</h2>
-                <div>
-                    <p className="round-lightblue-title">Tobacco</p>
-                    <p className="round-lightblue-title">FMCG</p>
-                    <p className="round-lightblue-title">Consultancy</p>
+                <h2 className="title" data-aos="fade-up">Industries</h2>
+                <div data-aos="fade-up" >
+                    <p className="round-lightblue-title"  >Tobacco</p>
+                    <p className="round-lightblue-title ">FMCG</p>
+                    <p className="round-lightblue-title"  >Consultancy</p>
                 </div>
             </div>
             <div className="section8">
-                <h2 className="title">News</h2>
+                <h2 className="title" data-aos="fade-up">News</h2>
                 <div className="news-container">
                     {news.map((e, idx)=>(
-                        <div className="news-box" key={idx}>
+                        <div className="news-box" key={idx}  data-aos="fade-up" data-aos-delay={idx*300}>
                             <img src={e.src} alt="news" />
                             <div className="news-text-container">
                                 <div className="news-title-container mb-2">
@@ -191,17 +253,17 @@ const Home = () => {
                 
             </div>
             <div className="section9">
-            <div className="title-container">
+            <div className="title-container" data-aos="fade-up" >
                     <div></div>
-                    <h2 className="title">Business tips</h2>
+                    <h2 className="title mb-0" >Business tips</h2>
                     <p className="mb-0 blue-upper">View all</p>
                 </div>
-                <p className="blue-text">
+                <p className="blue-text" data-aos="fade-up" >
                 Subscribe to our YouTube channel  to stay up-to-date with the latest business trends. 
                 </p>
                 <div className="video-container">
                     {business.map((e,idx)=>(
-                        <div className="video-subcontainer" key={idx}>
+                        <div className="video-subcontainer" key={idx} data-aos="fade-up" data-aos-delay={idx*300}>
                             <div className="video-square" >
                                 <img src={e} alt="video" />
                                 <div className="white-layer">
@@ -222,7 +284,7 @@ const Home = () => {
                     <Button text='subscribe' color="blue" />
 
             </div>
-            <div className="section10">
+            <div className="section10" data-aos="fade-up">
                 <p className="title" style={{fontWeight:'bold'}}>Need help with your busienss?</p>
                 <p className="blue-text mb-4">Book your 15 mins free consultation now! </p>
                 <Button text='book a consultation' color="blue" />
